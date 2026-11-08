@@ -35,3 +35,18 @@
   scene.style.backgroundImage =
     "url('images/scene_" + n + ".webp'),linear-gradient(135deg,#171522,#08090d)";
 }
+    // Первая сцена
+  showScene(0);
+
+  // Меняем сцену каждые 10 секунд
+  setInterval(function() {
+    showScene(current + 1);
+  }, 10000);
+
+  // Меняем советы каждые 7 секунд
+  setInterval(function() {
+    tipIndex = (tipIndex + 1) % tips.length;
+    tip.textContent = tips[tipIndex];
+  }, 7000);
+
+})();
